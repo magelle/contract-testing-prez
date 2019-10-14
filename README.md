@@ -1,18 +1,61 @@
-# contract-testing-prez
+# Contract testing
+nv
+## Le principe :
 
-## Pres contract testing
+- Introduction Architecture
+               * bcp de services, dont des services externes
+               * bcp d'interations entre ces services
 
-- Votre architecture
-- Les problèmes
-- Le contract testing
-- Consumer driven vs producer driven
-- Pact
+- Problematique :
+               * Qui utilise ? Quelle API / version ?
+               * difficulté a mesurer les impacts d'un refacto de producer ou consumer
 
-## Pres Pact
+- Principe du contract testing :
+               * quand faire du CT ?
+               * quoi tester / ne pas tester ?
+               * rôle de mock
+               * CT vs E2E testing : pyramide des tests
 
-- Ecriture d'un contrat
-- Ecriture du test de consumer
-- Ecriture du test du producer
+- Consumer vs producer driven :
+               * principes
+               * comment choisir entre les deux
+               * quelques exemples d'outils
+
+- Ca permet quoi le consumer driven ?
+               * Voir les endpoints non/mal utilisés
+               * Identifier les consumers
+               * ex: micro-services
+
+- Producer Driven
+    * On ne connait pas les consumers (twitter)
+    *
+
+- Avantages/inconvénients
+ 
+
+## Pact :
+
+- Présentation générale :
+               * polyglotte
+               * state
+               * consumer driven
+               * gestion du versionning
+               * why pact ? Opensource, active community, well documented, polyglotte
+
+- Ecriture d'un consumer
+- Ecriture du producer
+- broker
+- Second Producer (avec visu sur le broker)
 - Passage des tests
-- modification du producer et test qui échoue
+- Modif du producer et explosion !
+
+Ouverture :
+- Can I deploy : avec le versionning
+- Messaging
+
+Some links :
+- Pact https://docs.pact.io/
+- Refs
+https://reflectoring.io/7-reasons-for-consumer-driven-contracts/
+https://martinfowler.com/bliki/ContractTest.html
 
