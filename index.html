@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>N’ayez plus peur de refactorer vos API WEB</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
@@ -25,8 +25,132 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>N’ayez plus peur de refactorer vos API WEB</h1>
+				</section>
+				<section>
+					<h1>Jessica & Maxime</h1>
+				</section>
+				
+				<section>
+					<section>
+						<h2>#micro-services !!!</h2>
+						<b>Gif Success</b>
+					</section>
+					<section>
+						<h1>Ma belle architecture</h1>
+						<h2>Mon site e-commerce #cestmoiquilaifait</h2>
+						<img src="" alt="Notre super architcture">
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h1>On passe à l'internationnal !!!</h1>
+						<img src="" alt="OMG">
+					</section>
+					<section>
+						<h2>New Feature : Gérer toutes devises</h2>
+						<h3>Il faut modifier une API</h3>
+					</section>
+					<section>
+						<ul>
+							<li>Comment pas tout casser ?</li>
+							<li>Combien ça va coûter ?</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Ce serait génial si on savait</h2>
+						<ul>
+							<li>Qui utilise ? Quelle API / version ?</li>
+							<li>Quels services communiquent ?</li>
+							<li>Quels sont les formats d'échange ?</li>
+							<li>Mesurer les impacts d'une évolution</li>
+							<li>Valider une nouvelle version</li>
+						</ul>
+					</section>
+					<section>
+						<h2>En gros</h2>
+						<p>D'habitude on teste ça</p>
+						<img src="" alt="Un service est testé">
+					</section>
+					<section>
+						<h2>Il nous manque ce petit bout</h2>
+						<img src="" alt="Interaction entre deux services">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Contract Testing !</h1>
+					</section>
+					<section>
+						<h1>Contract Testing ?</h1>
+						<h2>Késako</h2>
+						<img src="" alt="Interaction entre deux services">
+					</section>
+					<section>
+						<h1>Contract testing</h1>
+						<h2>On définit un contrat</h2>
+						<img src="" alt="Un contract" >
+					</section>
+					<section>
+						<h2>Coté Service (producer)</h2>
+						<h3>C'est celui qui propose l'API</h3>
+						<img src="" alt="Un contract -> des tests d'appels de l'API">
+					</section>
+					<section>
+						<h2>Coté Client (consumer)</h2>
+						<h3>C'est celui qui appelle l'API</h3>
+						<img src="" alt="Un contract -> Un fake que le client peut appeler">
+					</section>
+					<section>
+						<h2>Au global</h2>
+						<img src="" alt="Global view">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Qui définit le contrat ?</h1>
+					</section>
+
+					<section>
+						<h1>Producer Driven Contract Testing</h1>
+						<h2>Je fonctionne de cette manière</h2>
+					</section>
+					<section>
+						<h1>Producer Driven Contract Testing</h1>
+						<ul>
+							<li>On ne connait pas les clients</li>
+							<li>...</li>
+						</ul>
+					</section>			
+
+					<section>
+						<h1>Consumer Driven Contract Testing</h1>
+						<h2>J'ai besoin de ça</h2>
+					</section>
+					<section>
+						<ul>
+							<li>Voir les endpoints non/mal utilisés</li>
+							<li>Identifier les consumers</li>
+							<li></li>
+						</ul>
+					</section>
+
+					<section>
+						<h1>C'est qui le plus fort ?</h1>
+					</section>
+					<section>
+						<h3>Quand faire du producer driven ?</h3>
+					</section>
+					<section>
+						<h3>Quand faire du consumer driven ?</h3>
+					</section>
+
+				</section>
+
 			</div>
 		</div>
 
