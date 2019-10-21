@@ -41,21 +41,20 @@
 						<b>Gif Success</b>
 					</section>
 					<section>
-						<h1>Ma belle architecture</h1>
-						<h2>Mon site e-commerce #cestmoiquilaifait</h2>
-						<img src="" alt="Notre super architcture">
+						<h3>Ma belle architecture</h3>
+						<img src="images/microservices-architecture.png" alt="Notre super architcture">
 					</section>
 				</section>
 				
 				<section>
 					<section>
-						<h1>On passe à l'internationnal !!!</h1>
+						<h3>Maintenant il faut le faire évoluer</h3>
 						<img src="" alt="OMG">
 					</section>
-					<section>
+					<!-- <section>
 						<h2>New Feature : Gérer toutes devises</h2>
 						<h3>Il faut modifier une API</h3>
-					</section>
+					</section> -->
 					<section>
 						<ul>
 							<li>Comment pas tout casser ?</li>
@@ -88,48 +87,75 @@
 						<h1>Contract Testing !</h1>
 					</section>
 					<section>
-						<h1>Contract Testing ?</h1>
-						<h2>Késako</h2>
-						<img src="" alt="Interaction entre deux services">
+						<h3>Tester les interactions</h3>
+						<h4>Entre provider et consumer</h4>
 					</section>
 					<section>
-						<h1>Contract testing</h1>
-						<h2>On définit un contrat</h2>
-						<img src="" alt="Un contract" >
-					</section>
-					<section>
-						<h2>Coté Service (producer)</h2>
+						<h2>Coté Service (provider)</h2>
 						<h3>C'est celui qui propose l'API</h3>
-						<img src="" alt="Un contract -> des tests d'appels de l'API">
-						<p>An application that makes use of the functionality or data from another application to do its job.
-							For applications that use HTTP, the consumer is always the application that initiates the HTTP request (eg. the web front end), regardless of the direction of data flow.
-							For applications that use queues, the consumer is the application that reads the message from the queue.</p>
+						<img src="" alt="Un contract -> des tests d'appels de l'API"/>
+						<p>
+							Provider: An application (often called a service) that provides functionality or data for other applications to use, often via an API.
+						</p>
+						<aside class="notes">
+							For applications that use HTTP, the provider is the application that returns the response.
+							For applications that use queues, the provider (also called producer) is the application that writes the messages to the queue.
+						</aside>
 					</section>
 					<section>
 						<h2>Coté Client (consumer)</h2>
 						<h3>C'est celui qui appelle l'API</h3>
-						<img src="" alt="Un contract -> Un fake que le client peut appeler">
-						<p>Provider: An application (often called a service) that provides functionality or data for other applications to use, often via an API.
-							For applications that use HTTP, the provider is the application that returns the response.
-							For applications that use queues, the provider (also called producer) is the application that writes the messages to the queue.</p>
+						<img src="" alt="Un contract -> Un fake que le client peut appeler"/>
+						<p>
+							An application that makes use of the functionality or data from another application to do its job.
+						</p>
+						<aside class="notes">
+							For applications that use HTTP, the consumer is always the application that initiates the HTTP request (eg. the web front end), regardless of the direction of data flow.
+							For applications that use queues, the consumer is the application that reads the message from the queue.
+						</aside>
+					</section>
+					<!-- <section>
+						<h2>Késako</h2>
+						<img src="" alt="Interaction entre deux services">
+					</section> -->
+					<section>
+						<img src="images/mocks.jpg" alt="Un contract" >
+					</section>
+					<section>
+						<h2>On définit un contrat</h2>
+						<img src="images/a-contract.png" alt="Un contract" >
+					</section>
+					<section>
+						<h2>On définit une interaction</h2>
+						<img src="images/an-interaction.png" alt="Une interaction" >
+					</section>
+				
+					<section>
+						<h4>Test d'un provider</h4>
+						<img src="images/pact-provider-verification.png"/>
+					</section>
+					<section>
+						<h4>Test d'un consumer</h4>
+						<img src="images/pact-consumer-verification.png"/>
 					</section>
 					<section>
 						<h2>Au global</h2>
-						<img src="" alt="Global view">
+						<img src="images/pact-test-and-verify.png" alt="Global view">
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h1>Qui définit le contrat ?</h1>
+						<h3>Qui définit le contrat ?</h3>
+						<h4>Consumer driven VS Provider driven</h4>
 					</section>
 
 					<section>
-						<h1>Producer Driven Contract Testing</h1>
+						<h1>provider Driven Contract Testing</h1>
 						<h2>Je fonctionne de cette manière</h2>
 					</section>
 					<section>
-						<h1>Producer Driven Contract Testing</h1>
+						<h1>provider Driven Contract Testing</h1>
 						<ul>
 							<li>On ne connait pas les clients</li>
 							<li>...</li>
@@ -140,12 +166,12 @@
 						<h1>Consumer Driven Contract Testing</h1>
 						<h2>J'ai besoin de ça</h2>
 					</section>
-					<section>
+					<!-- <section>
 						<img src="images/consumer-side.png"/>
 					</section>
 					<section>
-						<img src="images/producer-side.png"/>
-					</section>
+						<img src="images/provider-side.png"/>
+					</section> -->
 					<section>
 						<ul>
 							<li>Voir les endpoints non/mal utilisés</li>
@@ -158,7 +184,7 @@
 						<h1>C'est qui le plus fort ?</h1>
 					</section>
 					<section>
-						<h3>Quand faire du producer driven ?</h3>
+						<h3>Quand faire du provider driven ?</h3>
                         <ul>
                             <li>Pour tester une API Publique</li>
                             <li></li>
@@ -187,15 +213,15 @@
 						<h3>Consumer Driven Contract Testing</h3>
 						<p> prendre les images cools de ce lien https://docs.pact.io/getting_started/how_pact_works</p>
 					</section>
-					<section>
+					<!-- <section>
 						<h4>Test d'un consumer</h4>
 					</section>
 					<section>
 						<h4>Définition d'une interaction PACT</h4>
 					</section>
 					<section>
-						<h4>Test d'un producer</h4>
-					</section>
+						<h4>Test d'un provider</h4>
+					</section> -->
 
 					<section>
 						<h3>Polyglote</h3>
@@ -232,11 +258,30 @@
 						<h2>Conclusion</h2>
 					</section>
 					<section>
-						<ul>
-							<li>Contract testing != tests fonctionnels</li>
-							<li>Focus sur les incompréhensions entre client et server</li>
-						</ul>
-
+						<table>
+							<thead>
+								<tr>
+									<td>Do</td>
+									<td>Don't</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<ul>
+											<li>Tests d'interactions</li>
+											<li>Tests du format d'échange</li>
+										</ul>
+									</td>
+									<td>
+										<ul>
+											<li>Tests fonctionnels</li>
+											<li>Tests de charge</li>
+										</ul>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</section>
 				</section>
 
