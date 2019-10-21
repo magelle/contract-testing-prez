@@ -32,7 +32,6 @@
 				</section>
 				<section>
 					<h1>Jessica & Maxime</h1>
-					<aside class="notes">Une note pour le speaker</aside>
 				</section>
 				
 				<section>
@@ -64,11 +63,10 @@
 					<section>
 						<h2>Ce serait génial si on savait</h2>
 						<ul>
-							<li>Qui utilise ? Quelle API / version ?</li>
-							<li>Quels services communiquent ?</li>
+							<li>Quels services communiquent entre eux ?</li>
 							<li>Quels sont les formats d'échange ?</li>
-							<li>Mesurer les impacts d'une évolution</li>
-							<li>Valider une nouvelle version</li>
+							<li>Comment mesurer les impacts d'une évolution ?</li>
+							<li>Comment valider une nouvelle version ?</li>
 						</ul>
 					</section>
 					<section>
@@ -84,7 +82,7 @@
 
 				<section>
 					<section>
-						<h1>Contract Testing !</h1>
+						<h2>Contract Testing !</h2>
 					</section>
 					<section>
 						<h3>Tester les interactions</h3>
@@ -93,10 +91,10 @@
 					<section>
 						<h2>Coté Service (provider)</h2>
 						<h3>C'est celui qui propose l'API</h3>
-						<img src="" alt="Un contract -> des tests d'appels de l'API"/>
-						<p>
-							Provider: An application (often called a service) that provides functionality or data for other applications to use, often via an API.
-						</p>
+						<!--<img src="" alt="Un contract -> des tests d'appels de l'API"/>-->
+						<blockquote>
+							An application (often called a service) that provides functionality or data for other applications to use, often via an API.
+						</blockquote>
 						<aside class="notes">
 							For applications that use HTTP, the provider is the application that returns the response.
 							For applications that use queues, the provider (also called producer) is the application that writes the messages to the queue.
@@ -105,10 +103,10 @@
 					<section>
 						<h2>Coté Client (consumer)</h2>
 						<h3>C'est celui qui appelle l'API</h3>
-						<img src="" alt="Un contract -> Un fake que le client peut appeler"/>
-						<p>
+						<!--<img src="" alt="Un contract -> Un fake que le client peut appeler"/>-->
+						<blockquote>
 							An application that makes use of the functionality or data from another application to do its job.
-						</p>
+						</blockquote>
 						<aside class="notes">
 							For applications that use HTTP, the consumer is always the application that initiates the HTTP request (eg. the web front end), regardless of the direction of data flow.
 							For applications that use queues, the consumer is the application that reads the message from the queue.
@@ -151,20 +149,19 @@
 					</section>
 
 					<section>
-						<h1>provider Driven Contract Testing</h1>
-						<h2>Je fonctionne de cette manière</h2>
+						<h3>provider Driven Contract Testing</h3>
+						<p>"Je fonctionne de cette manière"</p>
 					</section>
 					<section>
-						<h1>provider Driven Contract Testing</h1>
+						<h3>provider Driven Contract Testing</h3>
 						<ul>
 							<li>On ne connait pas les clients</li>
-							<li>...</li>
 						</ul>
 					</section>			
 
 					<section>
-						<h1>Consumer Driven Contract Testing</h1>
-						<h2>J'ai besoin de ça</h2>
+						<h3>Consumer Driven Contract Testing</h3>
+						<h4>J'ai besoin de ça</h4>
 					</section>
 					<!-- <section>
 						<img src="images/consumer-side.png"/>
@@ -176,7 +173,6 @@
 						<ul>
 							<li>Voir les endpoints non/mal utilisés</li>
 							<li>Identifier les consumers</li>
-							<li></li>
 						</ul>
 					</section>
 
@@ -187,19 +183,25 @@
 						<h3>Quand faire du provider driven ?</h3>
                         <ul>
                             <li>Pour tester une API Publique</li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
                         </ul>
 					</section>
 					<section>
 						<h3>Quand faire du consumer driven ?</h3>
                         <ul>
-                            <li>Les besoins du client dirigent les developpements</li>
-                            <li></li>
-                            <li></li>
-                            <li>Peu de consumers pour un même driver</li>
+                            <li>Developpement orientés par le consumer</li>
+                            <li>Peu de consumers pour un même service</li>
                         </ul>
+					</section>
+					<section>
+						<h3>Avantage au Consumer Driven !</h3>
+					</section>
+					<section>
+						<h4>Identifier les interfaces utilités par les consumers</h4>
+						<img src="images/unused-interface.jpg"/>
+					</section>
+					<section>
+						<h4>Verifier l'utilisation des services</h4>
+						<img src="images/well-fittedness.jpg"/>
 					</section>
 
 				</section>
@@ -209,10 +211,10 @@
 						<h1>Pact</h1>
 						<img src="images/pact-logo.png" alt="Pact logo" >
 					</section>
-					<section>
-						<h3>Consumer Driven Contract Testing</h3>
-						<p> prendre les images cools de ce lien https://docs.pact.io/getting_started/how_pact_works</p>
-					</section>
+					<!--<section>-->
+						<!--<h3>Consumer Driven Contract Testing</h3>-->
+						<!--<p> prendre les images cools de ce lien https://docs.pact.io/getting_started/how_pact_works</p>-->
+					<!--</section>-->
 					<!-- <section>
 						<h4>Test d'un consumer</h4>
 					</section>
@@ -234,7 +236,7 @@
 						<img src="images/logo-techno/php.png" height="100px">		
 					</section>
 					<section>
-						<h3>Version de contract</h3>
+						<h3>Gestion du versioning</h3>
 					</section>
 					<section>
 						<h3>Pourquoi ?</h3>
@@ -244,6 +246,18 @@
 							<li>Bien documenté</li>
 							<li>Polyglotte</li>
 						</ul>
+					</section>
+					<section>
+						<h3>Pact Broker</h3>
+						<ul>
+							<li>Repertoire l'ensemble des pacts</li>
+							<li>Documentation automatique</li>
+							<li>Diagramme des microservices</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Contract Testing vs E2E Test</h3>
+
 					</section>
 					<section>
 						<h2>Notre cas</h2>
