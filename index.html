@@ -98,11 +98,17 @@
 						<h2>Coté Service (producer)</h2>
 						<h3>C'est celui qui propose l'API</h3>
 						<img src="" alt="Un contract -> des tests d'appels de l'API">
+						<p>An application that makes use of the functionality or data from another application to do its job.
+							For applications that use HTTP, the consumer is always the application that initiates the HTTP request (eg. the web front end), regardless of the direction of data flow.
+							For applications that use queues, the consumer is the application that reads the message from the queue.</p>
 					</section>
 					<section>
 						<h2>Coté Client (consumer)</h2>
 						<h3>C'est celui qui appelle l'API</h3>
 						<img src="" alt="Un contract -> Un fake que le client peut appeler">
+						<p>Provider: An application (often called a service) that provides functionality or data for other applications to use, often via an API.
+							For applications that use HTTP, the provider is the application that returns the response.
+							For applications that use queues, the provider (also called producer) is the application that writes the messages to the queue.</p>
 					</section>
 					<section>
 						<h2>Au global</h2>
@@ -132,6 +138,12 @@
 						<h2>J'ai besoin de ça</h2>
 					</section>
 					<section>
+						<img src="images/consumer-side.png"/>
+					</section>
+					<section>
+						<img src="images/producer-side.png"/>
+					</section>
+					<section>
 						<ul>
 							<li>Voir les endpoints non/mal utilisés</li>
 							<li>Identifier les consumers</li>
@@ -144,9 +156,21 @@
 					</section>
 					<section>
 						<h3>Quand faire du producer driven ?</h3>
+                        <ul>
+                            <li>Pour tester une API Publique</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
 					</section>
 					<section>
 						<h3>Quand faire du consumer driven ?</h3>
+                        <ul>
+                            <li>Les besoins du client dirigent les developpements</li>
+                            <li></li>
+                            <li></li>
+                            <li>Peu de consumers pour un même driver</li>
+                        </ul>
 					</section>
 
 				</section>
@@ -154,11 +178,22 @@
 				<section>
 					<section>
 						<h1>Pact</h1>
-						<img src="" alt="Pact logo" >
+						<img src="images/pact-logo.png" alt="Pact logo" >
 					</section>
 					<section>
 						<h3>Consumer Driven Contract Testing</h3>
+						<p> prendre les images cools de ce lien https://docs.pact.io/getting_started/how_pact_works</p>
 					</section>
+					<section>
+						<h4>Test d'un consumer</h4>
+					</section>
+					<section>
+						<h4>Définition d'une interaction PACT</h4>
+					</section>
+					<section>
+						<h4>Test d'un producer</h4>
+					</section>
+
 					<section>
 						<h3>Polyglote</h3>
 					</section>
@@ -183,8 +218,18 @@
 				</section>
 
 				<section>
-					<h2>Conclusion</h2>
+					<section>
+						<h2>Conclusion</h2>
+					</section>
+					<section>
+						<ul>
+							<li>Contract testing != tests fonctionnels</li>
+							<li>Focus sur les incompréhensions entre client et server</li>
+						</ul>
+
+					</section>
 				</section>
+
 			</div>
 		</div>
 
