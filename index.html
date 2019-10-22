@@ -28,7 +28,10 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>N’ayez plus peur de refactorer vos API WEB</h1>
+					<h4>N’ayez plus peur de refactorer vos API WEB</h4>
+					<img src="images/refactor-meme.jpg" 
+						 alt="Refactor or don't that is the question" 
+						 height="500px"/>
 				</section>
 				<section>
 					<h1>Jessica & Maxime</h1>
@@ -41,14 +44,14 @@
 					</section>
 					<section>
 						<h3>Ma belle architecture</h3>
-						<img src="images/microservices-architecture.png" alt="Notre super architcture">
+						<img src="images/architecture.png" alt="Notre super architcture">
 					</section>
 				</section>
 				
 				<section>
 					<section>
 						<h3>Maintenant il faut le faire évoluer</h3>
-						<img src="" alt="OMG">
+						
 					</section>
 					<!-- <section>
 						<h2>New Feature : Gérer toutes devises</h2>
@@ -70,13 +73,19 @@
 						</ul>
 					</section>
 					<section>
-						<h2>En gros</h2>
-						<p>D'habitude on teste ça</p>
-						<img src="" alt="Un service est testé">
+						<h3>En gros</h3>
+						<img src="images/layer-architecture.png" alt="Un service" 
+						     height="500px"/>
 					</section>
 					<section>
-						<h2>Il nous manque ce petit bout</h2>
-						<img src="" alt="Interaction entre deux services">
+						<h3>D'habitude on test ça</h3>
+						<img src="images/tested-layer-architecture.png" alt="Un service"
+						     height="500px"/>
+					</section>
+					<section>
+						<h3>Il nous manque ce petit bout</h3>
+						<img src="images/contract-testing-tested.png" alt="Interaction entre deux services"
+						     height="500px"/>
 					</section>
 				</section>
 
@@ -89,25 +98,25 @@
 						<h4>Entre provider et consumer</h4>
 					</section>
 					<section>
-						<h2>Coté Service (provider)</h2>
-						<h3>C'est celui qui propose l'API</h3>
-						<!--<img src="" alt="Un contract -> des tests d'appels de l'API"/>-->
-						<blockquote>
-							An application (often called a service) that provides functionality or data for other applications to use, often via an API.
-						</blockquote>
+						<h3>Provider</h3>
+						<h4>C'est celui qui propose l'API</h4>
+						<p>Exemple: Mon service REST</p>
+						
 						<aside class="notes">
+							An application (often called a service) that provides functionality or data for other applications to use, often via an API.
+
 							For applications that use HTTP, the provider is the application that returns the response.
 							For applications that use queues, the provider (also called producer) is the application that writes the messages to the queue.
 						</aside>
 					</section>
 					<section>
-						<h2>Coté Client (consumer)</h2>
-						<h3>C'est celui qui appelle l'API</h3>
-						<!--<img src="" alt="Un contract -> Un fake que le client peut appeler"/>-->
-						<blockquote>
-							An application that makes use of the functionality or data from another application to do its job.
-						</blockquote>
+						<h3>Consumer</h3>
+						<h4>C'est celui qui appelle l'API</h4>
+						<p>Exemple: Mes clients Angular</p>
+						
 						<aside class="notes">
+							An application that makes use of the functionality or data from another application to do its job.
+
 							For applications that use HTTP, the consumer is always the application that initiates the HTTP request (eg. the web front end), regardless of the direction of data flow.
 							For applications that use queues, the consumer is the application that reads the message from the queue.
 						</aside>
@@ -150,7 +159,7 @@
 
 					<section>
 						<h3>provider Driven Contract Testing</h3>
-						<p>"Je fonctionne de cette manière"</p>
+						<blockquote>Je fonctionne de cette manière</blockquote>
 					</section>
 					<section>
 						<h3>provider Driven Contract Testing</h3>
@@ -161,7 +170,7 @@
 
 					<section>
 						<h3>Consumer Driven Contract Testing</h3>
-						<h4>J'ai besoin de ça</h4>
+						<blockquote>J'ai besoin de ça</blockquote>
 					</section>
 					<!-- <section>
 						<img src="images/consumer-side.png"/>
@@ -190,7 +199,8 @@
                         <ul>
                             <li>Developpement orientés par le consumer</li>
                             <li>Peu de consumers pour un même service</li>
-                        </ul>
+						</ul>
+						<em>Architecture Microservice</em>
 					</section>
 					<section>
 						<h3>Avantage au Consumer Driven !</h3>
@@ -208,7 +218,6 @@
 
 				<section>
 					<section>
-						<h1>Pact</h1>
 						<img src="images/pact-logo.png" alt="Pact logo" >
 					</section>
 					<!--<section>-->
