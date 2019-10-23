@@ -28,40 +28,42 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h4>N’ayez plus peur de refactorer vos API WEB</h4>
+					<h4>N’ayez plus peur</h4>
 					<img src="images/refactor-meme.jpg" 
-						 alt="Refactor or don't that is the question" 
-						 height="500px"/>
+						 alt="Refactor or don't that is the question" />
+					<h4>refactorer vos API WEB</h4>
 				</section>
 				<section>
-					<h1>Jessica & Maxime</h1>
+					<h3>Jessica</h3>
+					<h1>&</h1>
+					<h3>Maxime</h3>
 				</section>
 				
 				<section>
 					<section>
 						<h2>#micro-services !!!</h2>
-						<b>Gif Success</b>
+						<img src="images/thumb-up.gif" alt="Thumb up" />
 					</section>
 					<section>
-						<h3>Ma belle architecture</h3>
-						<img src="images/architecture.png" alt="Notre super architcture">
+						<h3>Notre architecture</h3>
+						<img src="images/microservices-architecture.png" 
+						     alt="Notre super architcture, bon c'est un peu compliqué">
 					</section>
 				</section>
 				
 				<section>
 					<section>
-						<h3>Maintenant il faut le faire évoluer</h3>
-						
+						<h3>New feature</h3>
+						<img src="images/jenga-machines.gif" 
+						alt="Add it without breaking everything" />
 					</section>
-					<!-- <section>
-						<h2>New Feature : Gérer toutes devises</h2>
-						<h3>Il faut modifier une API</h3>
-					</section> -->
 					<section>
+						<h3>Modifier une API</h3>
 						<ul>
 							<li>Comment pas tout casser ?</li>
 							<li>Combien ça va coûter ?</li>
 						</ul>
+						<img src="images/peur.gif" alt="On a peur" />
 					</section>
 					<section>
 						<h2>Ce serait génial si on savait</h2>
@@ -71,6 +73,9 @@
 							<li>Comment mesurer les impacts d'une évolution ?</li>
 							<li>Comment valider une nouvelle version ?</li>
 						</ul>
+						<aside class="notes">
+							C'est trop long ces points
+						</aside>
 					</section>
 					<section>
 						<h3>En gros</h3>
@@ -87,6 +92,12 @@
 						<img src="images/contract-testing-tested.png" alt="Interaction entre deux services"
 						     height="500px"/>
 					</section>
+					<section>
+						<h3>Autrement dit</h3>
+						<img src="images/interactions-to-test.png" 
+						     alt="Interaction entre les services"
+							 height="500px"/>
+					</section>
 				</section>
 
 				<section>
@@ -96,6 +107,8 @@
 					<section>
 						<h3>Tester les interactions</h3>
 						<h4>Entre provider et consumer</h4>
+						<img src="images/contract-testing-principle.png" 
+								alt="both consumer and provider should verify the contract" />
 					</section>
 					<section>
 						<h3>Provider</h3>
@@ -121,33 +134,34 @@
 							For applications that use queues, the consumer is the application that reads the message from the queue.
 						</aside>
 					</section>
-					<!-- <section>
-						<h2>Késako</h2>
-						<img src="" alt="Interaction entre deux services">
-					</section> -->
 					<section>
-						<img src="images/mocks.jpg" alt="Un contract" >
+						<h3>Comment ?</h3>
+						<img src="images/contract-testing-mocks.png" 
+								alt="Un contract, tester avec des mocks" 
+								width="500px"/>
 					</section>
 					<section>
 						<h2>On définit un contrat</h2>
-						<img src="images/a-contract.png" alt="Un contract" >
+						<img src="images/a-contract-and-interactions.png" alt="Un contract" 
+						     width="500px"/>
 					</section>
 					<section>
-						<h2>On définit une interaction</h2>
-						<img src="images/an-interaction.png" alt="Une interaction" >
+						<h2>Et des interactions</h2>
+						<img src="images/interaction.png" alt="Une interaction" 
+						     width="500px"/>
 					</section>
 				
 					<section>
 						<h4>Test d'un provider</h4>
-						<img src="images/pact-provider-verification.png"/>
+						<img src="images/test-provider.png"/>
 					</section>
 					<section>
 						<h4>Test d'un consumer</h4>
-						<img src="images/pact-consumer-verification.png"/>
+						<img src="images/test-consumer.png"/>
 					</section>
 					<section>
 						<h2>Au global</h2>
-						<img src="images/pact-test-and-verify.png" alt="Global view">
+						<img src="images/both-tests.png" alt="Global view">
 					</section>
 				</section>
 
@@ -158,27 +172,24 @@
 					</section>
 
 					<section>
-						<h3>provider Driven Contract Testing</h3>
+						<h3>provider Driven</h3>
 						<blockquote>Je fonctionne de cette manière</blockquote>
 					</section>
+					
 					<section>
-						<h3>provider Driven Contract Testing</h3>
+						<h3>Consumer Driven</h3>
+						<blockquote>J'ai besoin de ça</blockquote>
+					</section>
+
+					<section>
+						<h3>provider Driven</h3>
 						<ul>
 							<li>On ne connait pas les clients</li>
 						</ul>
 					</section>			
-
+					
 					<section>
-						<h3>Consumer Driven Contract Testing</h3>
-						<blockquote>J'ai besoin de ça</blockquote>
-					</section>
-					<!-- <section>
-						<img src="images/consumer-side.png"/>
-					</section>
-					<section>
-						<img src="images/provider-side.png"/>
-					</section> -->
-					<section>
+						<h3>Consumer Driven</h3>
 						<ul>
 							<li>Voir les endpoints non/mal utilisés</li>
 							<li>Identifier les consumers</li>
@@ -186,7 +197,7 @@
 					</section>
 
 					<section>
-						<h1>C'est qui le plus fort ?</h1>
+						<h2>C'est qui le plus fort ?</h2>
 					</section>
 					<section>
 						<h3>Quand faire du provider driven ?</h3>
@@ -202,8 +213,12 @@
 						</ul>
 						<em>Architecture Microservice</em>
 					</section>
-					<section>
+					<!--section>
 						<h3>Avantage au Consumer Driven !</h3>
+						<aside class="notes">
+							Je suis pas sûr que l'un est mieux que l'autre.
+							ça répond juste pas aux mêmes besoins.
+						</aside>
 					</section>
 					<section>
 						<h4>Identifier les interfaces utilités par les consumers</h4>
@@ -212,7 +227,7 @@
 					<section>
 						<h4>Verifier l'utilisation des services</h4>
 						<img src="images/well-fittedness.jpg"/>
-					</section>
+					</section-->
 
 				</section>
 
@@ -220,20 +235,6 @@
 					<section>
 						<img src="images/pact-logo.png" alt="Pact logo" >
 					</section>
-					<!--<section>-->
-						<!--<h3>Consumer Driven Contract Testing</h3>-->
-						<!--<p> prendre les images cools de ce lien https://docs.pact.io/getting_started/how_pact_works</p>-->
-					<!--</section>-->
-					<!-- <section>
-						<h4>Test d'un consumer</h4>
-					</section>
-					<section>
-						<h4>Définition d'une interaction PACT</h4>
-					</section>
-					<section>
-						<h4>Test d'un provider</h4>
-					</section> -->
-
 					<section>
 						<h3>Polyglote</h3>
 						<img src="images/logo-techno/ruby.png" height="100px">
