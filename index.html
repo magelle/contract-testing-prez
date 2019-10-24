@@ -60,21 +60,36 @@
 					<section>
 						<h3>Modifier une API</h3>
 						<ul>
-							<li>Comment pas tout casser ?</li>
 							<li>Combien ça va coûter ?</li>
+							<li>Comment pas tout casser ?</li>
 						</ul>
 						<img src="images/peur.gif" alt="On a peur" />
 					</section>
 					<section>
-						<h2>Ce serait génial si on savait</h2>
-						<ul>
-							<li>Quels services communiquent entre eux ?</li>
-							<li>Quels sont les formats d'échange ?</li>
-							<li>Comment mesurer les impacts d'une évolution ?</li>
-							<li>Comment valider une nouvelle version ?</li>
-						</ul>
+						<h2>Ce qui serait génial</h2>
 						<aside class="notes">
 							C'est trop long ces points
+						</aside>
+					</section>
+					<section>
+						<h3>Une carte</h3>
+						<img src="images/map-interaction.jpg" alt="interaction map" />
+					</section>
+					<section>
+						<h3>Les formats</h3>
+						<img src="images/form-to-fill.jpg" alt="interaction format"/>
+						<aside class="notes">Les formats d'échanges, les vérifier</aside>
+					</section>
+					<section>
+						<h3>Voir le future</h3>
+						<img src="images/crystal-ball.jpg" alt="Crystal ball" />
+						<aside class="notes">
+							<ul>
+								<li>ça va fonctionner ?</li>
+								<li>Qui va cassé ?</li>
+								<li>Qui est impacté</li>
+								<li>...</li>
+							</ul>
 						</aside>
 					</section>
 					<section>
@@ -88,9 +103,12 @@
 						     height="500px"/>
 					</section>
 					<section>
-						<h3>Il nous manque ce petit bout</h3>
-						<img src="images/contract-testing-tested.png" alt="Interaction entre deux services"
-						     height="500px"/>
+						<h3>Mais ...</h3>
+						<img src="images/not-tested-layer-architecture.png" alt="Interaction entre deux services"
+							 height="500px"/>
+						<aside class="notes">
+							Mais les interactions sont mocké
+						</aside>
 					</section>
 					<section>
 						<h3>Autrement dit</h3>
@@ -112,7 +130,7 @@
 					</section>
 					<section>
 						<h3>Provider</h3>
-						<h4>C'est celui qui propose l'API</h4>
+						<blockquote>Celui qui propose l'API</blockquote>
 						<p>Exemple: Mon service REST</p>
 						
 						<aside class="notes">
@@ -124,7 +142,7 @@
 					</section>
 					<section>
 						<h3>Consumer</h3>
-						<h4>C'est celui qui appelle l'API</h4>
+						<blockquote>Celui qui appelle l'API</blockquote>
 						<p>Exemple: Mes clients Angular</p>
 						
 						<aside class="notes">
@@ -202,15 +220,16 @@
 					<section>
 						<h3>Quand faire du provider driven ?</h3>
                         <ul>
-							<li>Pour tester une API Publique</li>
-							<li>Vous ne connaissez pas vos clients</li>
+							<li>API Publique</li>
+							<li>Beaucoup de consumers</li>
+							<li>Consumers inconnus</li>
                         </ul>
 					</section>
 					<section>
 						<h3>Quand faire du consumer driven ?</h3>
                         <ul>
-                            <li>Developpement orientés par le consumer</li>
-							<li>Peu de consumers pour un même service</li>
+							<li>Peu de consumers</li>
+                            <li>Micro-services</li>
 						</ul>
 					</section>
 					<!--section>
@@ -269,6 +288,7 @@
 						<h3>Contract Testing vs E2E Test</h3>
 						<aside class="notes">
 							J'ai oublié ce qu'on voulait mettre ici.
+							Supprimer ?
 						</aside>
 					</section>
 				</section>
