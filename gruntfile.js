@@ -123,7 +123,7 @@ module.exports = grunt => {
 					'plugin/**',
 					'**.md'
 				],
-				dest: 'reveal-js-presentation.zip'
+				dest: 'contract-testing-prez.zip'
 			}
 		},
 

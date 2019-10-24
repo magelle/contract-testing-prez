@@ -46,7 +46,7 @@
  
 - Présentation du cas d'usage
   - Notre consumer / producer / format d'échange
-  - Notre exemple de mande de prix (en entier)
+  - Notre exemple demande de prix (en entier)
     - Présentation d'un contrat
     - Présentation d'un consumer
     - Présentation du producer

@@ -1,19 +1,18 @@
 {
-  "name": "reveal.js",
+  "name": "contract-testing-prez",
   "version": "3.8.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://revealjs.com",
+  "description": "A presentation arround contract testing",
+  "homepage": "http://magelle.github.io/prez/contract-testing-prez",
   "subdomain": "revealjs",
   "main": "js/reveal.js",
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve",
-    "build": "grunt"
+    "build": "grunt",
+    "package": "grunt zip"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Jessica Audas & Maxime GELLE"
   },
   "repository": {
     "type": "git",
