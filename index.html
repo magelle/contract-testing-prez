@@ -275,20 +275,36 @@
 					<section>
 						<h3>Contract Testing vs E2E Test</h3>
 						<ul>
-							<li>Moins complexe a mettre en place</li>
-							<li>Feedback plus rapides </li>
-							<li>Plus stable car moins dependant de l'environnement</li>
+							<li>Moins complexe</li>
+							<li>Feedback plus rapide</li>
+							<li>Plus stable</li>
 						</ul>
-						<aside class="notes">
-							J'ai oublié ce qu'on voulait mettre ici.
-							Supprimer ?
-						</aside>
 					</section>
 				</section>
 				<section><B></B>
 					<section>
 						<h2>Notre cas</h2>
 						<img src="images/use-case.png" />
+					</section>
+					<section>
+						<h2>Démo</h2>
+					</section>
+					<section>
+						<h3>Passer de</h3>
+						<pre><code class="hljs json">{
+	"id": 123,
+	"name": "mon produit",
+	"price": 499.99
+}</code></pre>
+						<h3 class="fragment fade-in">à</h3>
+						<pre class="fragment fade-in"><code class="hljs json">{
+	"id": 123,
+	"name": "mon produit",
+	"price": {
+		"amount": 499.99,
+		"currency": "EUR"
+	}
+}</code></pre>
 					</section>
 					<section>
 						<h2>Démo</h2>
