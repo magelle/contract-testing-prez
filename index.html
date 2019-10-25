@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/moon.css ">
 		<link rel="stylesheet" href="css/custom.css">
 
 
@@ -47,7 +47,8 @@
 					<section>
 						<h3>Notre architecture</h3>
 						<img src="images/microservices-architecture.png" 
-						     alt="Notre super architcture, bon c'est un peu compliqué">
+							 alt="Notre super architcture, bon c'est un peu compliqué" 
+							 height="500px"/>
 					</section>
 				</section>
 				
@@ -124,9 +125,11 @@
 					</section>
 					<section>
 						<h3>Tester les interactions</h3>
-						<h4>Entre provider et consumer</h4>
 						<img src="images/contract-testing-principle.png" 
 								alt="both consumer and provider should verify the contract" />
+						<aside class="notes">
+							Tester les interactions entre consumer et provider
+						</aside>
 					</section>
 					<section>
 						<h3>Provider</h3>
@@ -190,39 +193,27 @@
 					</section>
 
 					<section>
-						<h3>provider Driven</h3>
+						<h3>Provider Driven</h3>
 						<blockquote>Je fonctionne de cette manière</blockquote>
-					</section>
-					
+						<img src="" alt="Un contrat pour tous les consumers" />
+ 					</section>
+
 					<section>
 						<h3>Consumer Driven</h3>
 						<blockquote>J'ai besoin de ça</blockquote>
-					</section>
-
-					<section>
-						<h3>provider Driven</h3>
-						<ul>
-							<li>On ne connait pas les clients</li>
-						</ul>
-					</section>			
-					
-					<section>
-						<h3>Consumer Driven</h3>
-						<ul>
-							<li>Voir les endpoints non/mal utilisés</li>
-							<li>Identifier les consumers</li>
-						</ul>
+						<img src="" alt="Plusieurs contract pour un provider" />
 					</section>
 
 					<section>
 						<h2>C'est qui le plus fort ?</h2>
 					</section>
+
 					<section>
 						<h3>Quand faire du provider driven ?</h3>
                         <ul>
-							<li>API Publique</li>
-							<li>Beaucoup de consumers</li>
 							<li>Consumers inconnus</li>
+							<li>Beaucoup de consumers</li>
+							<li>API Publique</li>
                         </ul>
 					</section>
 					<section>
@@ -273,15 +264,12 @@
 							<li>Polyglotte</li>
 						</ul>
 					</section>
-					<!--section>
-						<h3>Gestion du versioning</h3>
-					</section-->
 					<section>
 						<h3>Pact Broker</h3>
 						<ul>
 							<li>Regroupe les Pacts</li>
 							<li>Documentation</li>
-							<li>Diagramme des microservices</li>
+							<li>Carte des microservices</li>
 						</ul>
 					</section>
 					<section>
