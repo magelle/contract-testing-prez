@@ -175,14 +175,17 @@
 					<section>
 						<h4>Test d'un provider</h4>
 						<img src="images/test-provider.png"/>
+						<aside class="notes">Jessica</aside>
 					</section>
 					<section>
 						<h4>Test d'un consumer</h4>
 						<img src="images/test-consumer.png"/>
+						<aside class="notes">Maxime</aside>
 					</section>
 					<section>
 						<h2>Au global</h2>
 						<img src="images/both-tests.png" alt="Global view">
+						<aside class="notes">Maxime</aside>
 					</section>
 				</section>
 
@@ -190,6 +193,7 @@
 					<section>
 						<h3>Qui définit le contrat ?</h3>
 						<h4>Consumer driven VS Provider driven</h4>
+						<aside class="notes">Maxime</aside>
 					</section>
 
 					<section>
@@ -197,6 +201,7 @@
 						<blockquote>Je fonctionne de cette manière</blockquote>
 						<img src="images/provider-driven-contract.png" 
 						     alt="Un contrat pour tous les consumers" />
+						<aside class="notes">Jessica</aside>
  					</section>
 
 					<section>
@@ -204,10 +209,12 @@
 						<blockquote>J'ai besoin de ça</blockquote>
 						<img src="images/consumer-driven-contract.png"
 						     alt="Plusieurs contract pour un provider" />
+						<aside class="notes">Jessica</aside>
 					</section>
 
 					<section>
 						<h2>C'est qui le plus fort ?</h2>
+						<aside class="notes">MAxime</aside>
 					</section>
 
 					<section>
@@ -217,6 +224,7 @@
 							<li>Beaucoup de consumers</li>
 							<li>API Publique</li>
                         </ul>
+						<aside class="notes">Jessica</aside>
 					</section>
 					<section>
 						<h3>Quand faire du consumer driven ?</h3>
@@ -224,6 +232,7 @@
 							<li>Peu de consumers</li>
                             <li>Micro-services</li>
 						</ul>
+						<aside class="notes">Jessica</aside>
 					</section>
 					<!--section>
 						<h3>Avantage au Consumer Driven !</h3>
@@ -242,10 +251,19 @@
 					</section-->
 
 				</section>
-
 				<section>
 					<section>
 						<img src="images/pact-logo.png" alt="Pact logo" >
+						<aside class="notes">Jessica</aside>
+					</section>
+					<section>
+						<h3>Pourquoi ?</h3>
+						<ul>
+							<li>Consumer driven Contract Testing </li>
+							<li>Open source</li>
+							<li>Communauté active</li>
+							<li>Bien documenté</li>
+						</ul>
 					</section>
 					<section>
 						<h3>Polyglote</h3>
@@ -255,41 +273,26 @@
 						<img src="images/logo-techno/go.png" height="100px">
 						<img src="images/logo-techno/javascript.png" height="100px">
 						<img src="images/logo-techno/swift.png" height="100px">
-						<img src="images/logo-techno/php.png" height="100px">		
-					</section>
-					<section>
-						<h3>Pourquoi ?</h3>
-						<ul>
-							<li>Open source</li>
-							<li>Communauté active</li>
-							<li>Bien documenté</li>
-							<li>Polyglotte</li>
-						</ul>
+						<img src="images/logo-techno/php.png" height="100px">
 					</section>
 					<section>
 						<h3>Pact Broker</h3>
 						<ul>
 							<li>Regroupe les Pacts</li>
 							<li>Documentation</li>
-							<li>Carte des microservices</li>
+							<li>Carte des interaction</li>
 						</ul>
-					</section>
-					<section>
-						<h3>Contract Testing vs E2E Test</h3>
-						<ul>
-							<li>Moins complexe</li>
-							<li>Feedback plus rapide</li>
-							<li>Plus stable</li>
-						</ul>
+						<aside class="notes">Maxime</aside>
 					</section>
 				</section>
-				<section><B></B>
+				<section>
+
+					<section>
+						<h2>Démo</h2>
+					</section>
 					<section>
 						<h2>Notre cas</h2>
 						<img src="images/use-case.png" />
-					</section>
-					<section>
-						<h2>Démo</h2>
 					</section>
 					<section>
 						<h3>Passer de</h3>
@@ -302,14 +305,8 @@
 						<pre class="fragment fade-in"><code class="hljs json">{
 	"id": 123,
 	"name": "mon produit",
-	"price": {
-		"amount": 499.99,
-		"currency": "EUR"
-	}
+	"description": "Here is an amazing product !"
 }</code></pre>
-					</section>
-					<section>
-						<h2>Démo</h2>
 						<aside class="notes">
 							Scénario :
 							- On veut modifier l'amount en currency
@@ -317,38 +314,58 @@
 							- On veut ajouter le stock sur un des consumer
 						</aside>
 					</section>
+
+
+				</section>
+
+				<section>
+					<section>
+						<table>
+							<thead>
+							<tr>
+								<td>Do</td>
+								<td>Don't</td>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+								<td>
+									<ul>
+										<li>Tests d'interactions</li>
+										<li>Tests du format d'échange</li>
+									</ul>
+								</td>
+								<td>
+									<ul>
+										<li>Tests fonctionnels</li>
+										<li>Tests de charge</li>
+									</ul>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h3>Contract Testing vs E2E Test</h3>
+						<ul>
+							<li>Moins complexe</li>
+							<li>Feedback plus rapide</li>
+							<li>Plus stable</li>
+						</ul>
+					</section>
 				</section>
 
 				<section>
 					<section>
 						<h2>Conclusion</h2>
+						<ul>
+							<li>Tester des interactions</li>
+							<li>Partager les contrats</li>
+							<li>Visualiser les échanges</li>
+						</ul>
+
 					</section>
-					<section>
-						<table>
-							<thead>
-								<tr>
-									<td>Do</td>
-									<td>Don't</td>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<ul>
-											<li>Tests d'interactions</li>
-											<li>Tests du format d'échange</li>
-										</ul>
-									</td>
-									<td>
-										<ul>
-											<li>Tests fonctionnels</li>
-											<li>Tests de charge</li>
-										</ul>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
+
 				</section>
 
 				<section>
