@@ -29,7 +29,7 @@
 			<div class="slides">
 				<section>
 					<h4>N’ayez plus peur</h4>
-					<img src="images/refactor-meme.jpg" 
+					<img src="images/refactor-meme.jpg"
 						 alt="Refactor or don't that is the question" />
 					<h4>de refactorer vos API WEB</h4>
 				</section>
@@ -38,7 +38,7 @@
 					<h1>&</h1>
 					<h3>Maxime</h3>
 				</section>
-				
+
 				<section>
 					<section>
 						<h2>#micro-services !!!</h2>
@@ -46,16 +46,16 @@
 					</section>
 					<section>
 						<h3>Notre architecture</h3>
-						<img src="images/microservices-architecture.png" 
-							 alt="Notre super architcture, bon c'est un peu compliqué" 
+						<img src="images/microservices-architecture.png"
+							 alt="Notre super architcture, bon c'est un peu compliqué"
 							 height="500px"/>
 					</section>
 				</section>
-				
+
 				<section>
 					<section>
 						<h3>New feature</h3>
-						<img src="images/jenga-machines.gif" 
+						<img src="images/jenga-machines.gif"
 						alt="Add it without breaking everything" />
 					</section>
 					<section>
@@ -95,7 +95,7 @@
 					</section>
 					<section>
 						<h3>En gros</h3>
-						<img src="images/layer-architecture.png" alt="Un service" 
+						<img src="images/layer-architecture.png" alt="Un service"
 						     height="500px"/>
 					</section>
 					<section>
@@ -113,7 +113,7 @@
 					</section>
 					<section>
 						<h3>Autrement dit</h3>
-						<img src="images/interactions-to-test.png" 
+						<img src="images/interactions-to-test.png"
 						     alt="Interaction entre les services"
 							 height="500px"/>
 					</section>
@@ -125,7 +125,7 @@
 					</section>
 					<section>
 						<h3>Tester les interactions</h3>
-						<img src="images/contract-testing-principle.png" 
+						<img src="images/contract-testing-principle.png"
 								alt="both consumer and provider should verify the contract" />
 						<aside class="notes">
 							Tester les interactions entre consumer et provider
@@ -135,7 +135,7 @@
 						<h3>Provider</h3>
 						<blockquote>Celui qui propose l'API</blockquote>
 						<p>Exemple: Mon service REST</p>
-						
+
 						<aside class="notes">
 							An application (often called a service) that provides functionality or data for other applications to use, often via an API.
 
@@ -147,7 +147,7 @@
 						<h3>Consumer</h3>
 						<blockquote>Celui qui appelle l'API</blockquote>
 						<p>Exemple: Mes clients Angular</p>
-						
+
 						<aside class="notes">
 							An application that makes use of the functionality or data from another application to do its job.
 
@@ -157,21 +157,21 @@
 					</section>
 					<section>
 						<h3>Comment ?</h3>
-						<img src="images/contract-testing-mocks.png" 
-								alt="Un contract, tester avec des mocks" 
+						<img src="images/contract-testing-mocks.png"
+								alt="Un contract, tester avec des mocks"
 								width="500px"/>
 					</section>
 					<section>
 						<h2>On définit un contrat</h2>
-						<img src="images/a-contract-and-interactions.png" alt="Un contract" 
+						<img src="images/a-contract-and-interactions.png" alt="Un contract"
 						     width="500px"/>
 					</section>
 					<section>
 						<h2>Et des interactions</h2>
-						<img src="images/interaction.png" alt="Une interaction" 
+						<img src="images/interaction.png" alt="Une interaction"
 						     width="500px"/>
 					</section>
-				
+
 					<section>
 						<h4>Test d'un provider</h4>
 						<img src="images/test-provider.png"/>
@@ -199,7 +199,7 @@
 					<section>
 						<h3>Provider Driven</h3>
 						<blockquote>Je fonctionne de cette manière</blockquote>
-						<img src="images/provider-driven-contract.png" 
+						<img src="images/provider-driven-contract.png"
 						     alt="Un contrat pour tous les consumers" />
 						<aside class="notes">Jessica</aside>
  					</section>
@@ -294,28 +294,138 @@
 						<h2>Notre cas</h2>
 						<img src="images/use-case.png" />
 					</section>
+<!--					<section>-->
+<!--						<h3>Passer de</h3>-->
+<!--						<pre><code class="hljs json">{-->
+<!--	"id": 123,-->
+<!--	"name": "mon produit",-->
+<!--	"price": 499.99-->
+<!--}</code></pre>-->
+<!--						<h3 class="fragment fade-in">à</h3>-->
+<!--						<pre class="fragment fade-in"><code class="hljs json">{-->
+<!--	"id": 123,-->
+<!--	"name": "mon produit",-->
+<!--	"description": "Here is an amazing product !"-->
+<!--}</code></pre>-->
+<!--						<aside class="notes">-->
+<!--							Scénario :-->
+<!--							- On veut modifier l'amount en currency-->
+<!--								=> fail d'un seul des deux contracts-->
+<!--							- On veut ajouter le stock sur un des consumer-->
+<!--						</aside>-->
+<!--					</section>-->
+
+
+                    <section>
+                        <h3>Search Consumer : Définition du contrat</h3>
+                        <pre><code class="hljs java">@Pact(provider = "Catalog_Provider",consumer = "Search_Consumer")
+fun getAnExistingProduct(builder: PactDslWithProvider):
+                            RequestResponsePact {
+    return builder
+            .uponReceiving("Get an existing product")
+            .method("GET")
+            .path("/products/1")
+            .willRespondWith()
+            .status(HttpStatus.OK.value())
+            .body(PactDslJsonBody()
+                    .numberType("id", 1)
+                    .stringType("name", "Shoes")
+                    .asBody())
+            .toPact()
+}</code></pre></section>
 					<section>
-						<h3>Passer de</h3>
+						<h3>Contrat généré</h3>
 						<pre><code class="hljs json">{
-	"id": 123,
-	"name": "mon produit",
-	"price": 499.99
+    "provider": {
+        "name": "Catalog_Provider"
+    },
+    "consumer": {
+        "name": "Search_Consumer"
+    },
+    "interactions": [
+        {
+            "description": "Get an existing product",
+            "request": {
+                "method": "GET",
+                "path": "/products/1"
+            },
+            "response": {
+                "status": 200,
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "body": {
+                    "id": 1,
+                    "name": "Shoes"
+                },
+                "matchingRules": {
+                    "body": {
+                        "$.id": {
+                            "matchers": [
+                                {
+                                    "match": "number"
+                                }
+                            ],
+                            "combine": "AND"
+                        },
+                        "$.name": {
+                            "matchers": [
+                                {
+                                    "match": "type"
+                                }
+                            ],
+                            "combine": "AND"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "pactSpecification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.24"
+        }
+    }
 }</code></pre>
-						<h3 class="fragment fade-in">à</h3>
-						<pre class="fragment fade-in"><code class="hljs json">{
-	"id": 123,
-	"name": "mon produit",
-	"description": "Here is an amazing product !"
-}</code></pre>
-						<aside class="notes">
-							Scénario :
-							- On veut modifier l'amount en currency
-								=> fail d'un seul des deux contracts
-							- On veut ajouter le stock sur un des consumer
-						</aside>
 					</section>
 
+					<section>
+						<h2>Consumer Test</h2>
+						<pre>
+							<code class="hljs java">@Test
+    fun shouldFindAllAccounts() {
+        val products = client.getProduct(1)
+        assertThat(products).isEqualTo(Product(1, "Shoes"))
+    }</code>
+						</pre>
+					</section>
 
+					<section>
+						<h2>Provider Test: Catalog</h2>
+						<pre><code>@SpringBootTest(/*Standard Spring Conf*/)
+@Provider("Catalog_Provider")
+@PactBroker(scheme = "https", host = "magelle.pact.dius.com.au", port="443",
+        authentication = PactBrokerAuth(scheme = "Bearer", username = "xxx"))
+class CatalogContractTest {
+
+    private val providerUrl = "http://localhost:8080"
+
+    @TestTemplate
+    @ExtendWith(PactVerificationInvocationContextProvider::class)
+    fun pactVerificationTestTemplate(context: PactVerificationContext) {
+        context.verifyInteraction()
+    }
+
+    @BeforeEach
+    @Throws(Exception::class)
+    fun before(context: PactVerificationContext) {
+        context.target = HttpTestTarget.fromUrl(URL(providerUrl))
+    }
+}</code></pre>
+					</section>
 				</section>
 
 				<section>
