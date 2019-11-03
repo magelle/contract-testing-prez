@@ -98,3 +98,21 @@ https://martinfowler.com/bliki/ContractTest.html
 - On lance le test du provider, ça explose
 - On corrige, ça passe
 - On montre tout ça dans Pact Broker
+
+## A changer 
+- 2rd parties
+- On test ça
+- quand se fait la génération du mock ? => au build
+- quand faire du consumer driven => consumer connus et avec lesquels on peut communiquer
+- quand faire du producer driven => Prendre l'exemple d'une API publique
+- Nommer les autres produits
+- Pact broker => carte des interations
+- update /api/productS
+- Au global en plus gros => EN PLUS GROS
+- Dans la démo, remettre la situation par rapport au schéma
+- Should find allAccounts renommé en meilleur truc pour le provider
+- Mieux expliquer le fonctionnement du broker plutot que ses avantages :
+               - Présenter la problématique (storage les contrats)
+               - Présenter les solutions possibles
+               - Présenter le broker et son fonctionnement avec les graphs
+- Pyramide de tests
