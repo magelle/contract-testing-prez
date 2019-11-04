@@ -112,7 +112,7 @@
 						     height="550px"/>
 					</section>
 					<section>
-						<h3>D'habitude on test ça</h3>
+						<h3>D'habitude on teste ça</h3>
 						<img src="images/tested-layer-architecture.png" alt="Un service"
 						     height="550px"/>
 					</section>
@@ -172,7 +172,7 @@
 						<h3>Comment ?</h3>
 						<img src="images/contract-testing-mocks.png"
 								alt="Un contract, tester avec des mocks"
-								height="400px"/>
+								height="500px"/>
 					</section>
 					<section>
 						<h2>On définit un contrat</h2>
@@ -256,7 +256,7 @@
 
 					<section data-transition="slide" >
 						<h2>Au global</h2>
-						<img src="images/both-tests.png" alt="Global view" height="300px">
+						<img src="images/both-tests.png" alt="Global view" height="250px">
 						<aside class="notes">Maxime</aside>
 					</section>
 				</section>
@@ -348,11 +348,21 @@
 						<img src="images/logo-techno/php.png" height="100px">
 					</section>
 					<section>
+						<h3>Echange des contrats</h3>
+						<ul>
+							<li>Commit dans le Provider</li>
+							<li>Github, bitbucket, ...</li>
+							<li>Amazon S3</li>
+							<li>Nexus / Artifactory</li>
+							<li><b>Pact Broker</b></li>
+						</ul>
+					</section>
+					<section>
 						<h3>Pact Broker</h3>
 						<ul>
 							<li>Regroupe les Pacts</li>
 							<li>Documentation</li>
-							<li>Carte des interaction</li>
+							<li>Carte des interactions</li>
 						</ul>
 						<aside class="notes">Maxime</aside>
 					</section>
@@ -526,6 +536,13 @@ class CatalogContractTest {
 					<section>
 						<h3>En plus</h3>
 						<img src="images/Pyramide-test.png" alt="On descend d'un cran dans la pyramide des tests" />
+						<aside class="notes">
+							avant -> testé via e2e, test manuels, en prod<br/>
+							maintenant -> test intégration<br/>
+							+ rapide<br/>
+							+ fiable<br/>
+							- cher <br/>
+						</aside>
 					</section>
 					<section>
 						<h3>Attention</h3>
@@ -582,7 +599,8 @@ class CatalogContractTest {
 					</section>
 
 					<section>
-						<h3>Provider driven -> Consumer driven</h3>
+						<h3>de Provider driven</h3>
+						<h3>à Consumer driven</h3>
 						<ul>
 							<li>Pact, polyglote</li>
 							<li>Plus précis</li>
