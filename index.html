@@ -349,16 +349,6 @@
 					</section>
 
 					<section>
-						<h3>Quand faire du provider driven ?</h3>
-                        <ul>
-							<li>Consumers inconnus</li>
-							<li>Beaucoup de consumers</li>
-							<li>Communication difficile</li>
-						</ul>
-						<blockquote>ex: Api publique de Twitter</blockquote>
-						<aside class="notes">Maxime</aside>
-					</section>
-					<section>
 						<h3>Quand faire du consumer driven ?</h3>
                         <ul>
 							<li>Peu de consumers</li>
@@ -377,11 +367,9 @@
 					<section>
 						<h3>Echange des contrats</h3>
 						<ul>
-							<li>Commit dans le Provider</li>
 							<li>Github, bitbucket, ...</li>
-							<li>Amazon S3</li>
 							<li>Nexus / Artifactory</li>
-							<li><b>Pact Broker</b></li>
+							<li>Contract repository</li>
 						</ul>
 						<aside class="notes">Maxime</aside>
 					</section>
@@ -473,29 +461,35 @@
 
 					<section>
 						<h3>Search Consumer : Définition du contrat</h3>
-						<img src="images/full-test-1.png" alt="Une interaction"
-							height="300px"/>
+						<pre><code class="hljs">// Expected Request
+Http get sur /products/1
+
+// Minimal response
+Http response OK
+id : un nombre, ex: 1
+name : un string, ex: "Shoes"
+</code></pre>
+						</table>
 						<aside class="notes" >Maxime</aside>
 					</section>
 
                     <section data-background="#cef28f">
                         <h3>Search Consumer : Définition du contrat</h3>
                         <pre><code class="hljs java">@Pact(provider = "Catalog_Provider",consumer = "Search_Consumer")
-fun getAnExistingProduct(builder: PactDslWithProvider):
-                            RequestResponsePact {
-    return builder
-            .uponReceiving("Get a product")
-            .method("GET")
-            .path("/products/1")
-            .willRespondWith()
-            .status(HttpStatus.OK.value())
-            .body(PactDslJsonBody()
-                    .numberType("id", 1)
-                    .stringType("name", "Shoes")
-                    .asBody())
-            .toPact()
+fun getAnExistingProduct(builder: PactDslWithProvider): RequestResponsePact {
+	return builder
+		.uponReceiving("Get a product")
+		.method("GET")
+		.path("/products/1")
+		.willRespondWith()
+		.status(HttpStatus.OK.value())
+		.body(PactDslJsonBody()
+			.numberType("id", 1)
+			.stringType("name", "Shoes")
+			.asBody())
+		.toPact()
 }</code></pre>
-<aside class="notes" >Maxime</aside>
+							<aside class="notes" >Maxime</aside>
 					</section>
 					<section data-background="#cef28f">
 						<h3>Contrat généré</h3>
