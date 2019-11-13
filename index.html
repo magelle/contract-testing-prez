@@ -112,7 +112,7 @@
 							Jessica
 						</aside>
 					</section>
-					<section>
+					<!--<section>
 						<h3>Les formats</h3>
 						<img src="images/form-to-fill.jpg" alt="interaction format"/>
 						<aside class="notes">
@@ -120,7 +120,7 @@
 							<br/>
 							Les formats d'échanges, les vérifier
 						</aside>
-					</section>
+					</section>-->
 					<section>
 						<h3>Prédire ...</h3>
 						<img src="images/crystal-ball.jpg" alt="Crystal ball" />
@@ -145,7 +145,7 @@
 								Maxime
 							</aside>
 					</section>
-					<section>
+					<section data-transition="none" >
 						<h3>D'habitude on teste ça</h3>
 						<img src="images/tested-layer-architecture.png" alt="Un service"
 							 height="550px"/>
@@ -153,7 +153,7 @@
 							Maxime
 						</aside>
 					</section>
-					<section>
+					<section data-transition="none" >
 						<h3>Mais ...</h3>
 						<img src="images/not-tested-layer-architecture.png" alt="Interaction entre deux services"
 							 height="550px"/>
@@ -197,7 +197,6 @@
 						<h3>Provider</h3>
 						<blockquote>Celui qui propose l'API</blockquote>
 						<p>Exemple: Mon service REST</p>
-
 						<aside class="notes">
 							Jessica
 						</aside>
@@ -206,16 +205,6 @@
 						<h3>Consumer</h3>
 						<blockquote>Celui qui appelle l'API</blockquote>
 						<p>Exemple: Mes clients Angular</p>
-
-						<aside class="notes">
-							Jessica
-						</aside>
-					</section>
-					<section>
-						<h3>Comment ?</h3>
-						<img src="images/contract-testing-mocks.png"
-								alt="Un contract, tester avec des mocks"
-								height="500px"/>
 						<aside class="notes">
 							Jessica
 						</aside>
@@ -238,11 +227,12 @@
 					</section>
 
 					<section>
-						<h2>Tests</h2>
-						<img src="images/interaction.png" alt="Une interaction"
-							 height="300px"/>
+						<h3>Comment ?</h3>
+						<img src="images/contract-testing-mocks.png"
+								alt="Un contract, tester avec des mocks"
+								height="500px"/>
 						<aside class="notes">
-								Jessica
+							Jessica
 						</aside>
 					</section>
 
@@ -324,29 +314,12 @@
 					</section>
 
 					<section>
-						<h3>Provider Driven</h3>
-						<blockquote>Je fonctionne de cette manière</blockquote>
-						<img src="images/provider-driven-contract.png"
-						     alt="Un contrat pour tous les consumers" />
-						<aside class="notes">Jessica</aside>
- 					</section>
-
-					<section>
 						<h3>Consumer Driven</h3>
 						<blockquote>J'ai besoin de ça</blockquote>
 						<img src="images/consumer-driven-contract.png"
 						     alt="Plusieurs contract pour un provider" />
 						<aside class="notes">Jessica</aside>
 					</section>
-
-					<section>
-						<h2>On fait quoi ?</h2>
-						<aside class="notes">
-							Jessica pose la question<br/>
-							Maxime enchaine
-						</aside>
-					</section>
-
 					<section>
 						<h3>Quand faire du consumer driven ?</h3>
                         <ul>
@@ -356,6 +329,25 @@
 						<blockquote>ex: Backend for Frontend</blockquote>
 						<aside class="notes">Maxime</aside>
 					</section>
+
+					<section>
+						<h3>Provider Driven</h3>
+						<blockquote>Je fonctionne de cette manière</blockquote>
+						<img src="images/provider-driven-contract.png"
+						     alt="Un contrat pour tous les consumers" />
+						<aside class="notes">Jessica</aside>
+ 					</section>
+					<section>
+						<h3>Quand faire du provider driven ?</h3>
+                        <ul>
+							<li>Consumers inconnus</li>
+							<li>Beaucoup de consumers</li>
+							<li>Communication difficile</li>
+						</ul>
+						<blockquote>ex: Api publique de Twitter</blockquote>
+						<aside class="notes">Maxime</aside>
+					</section>
+
 				</section>
 
 				<section>
@@ -367,7 +359,7 @@
 						<h3>Echange des contrats</h3>
 						<ul>
 							<li>Github, bitbucket, ...</li>
-							<li>Nexus / Artifactory</li>
+							<li>Nexus, Artifactory, ...</li>
 							<li>Contract repository</li>
 						</ul>
 						<aside class="notes">Maxime</aside>
@@ -428,11 +420,11 @@
 						<aside class="notes">Jessica</aside>
 					</section>
 					<section>
-						<h3>Pact Broker</h3>
+						<h3>Contract Repository : Pact Broker</h3>
 						<ul>
-							<li>Regroupe les Pacts</li>
-							<li>Documentation</li>
-							<li>Carte des interactions</li>
+							<li>Stocke les contrats</li>
+							<li>Cartographie les interactions</li>
+							<li>Liste les vérifications</li>
 						</ul>
 						<aside class="notes">Jessica</aside>
 					</section>
@@ -460,15 +452,7 @@
 
 					<section>
 						<h3>Search Consumer : Définition du contrat</h3>
-						<pre><code class="hljs">// Expected Request
-Http get sur /products/1
-
-// Minimal response
-Http response OK
-id : un nombre, ex: 1
-name : un string, ex: "Shoes"
-</code></pre>
-						</table>
+						<img src="images/contract.png" />
 						<aside class="notes" >Maxime</aside>
 					</section>
 
@@ -656,28 +640,20 @@ class CatalogContractTest {
 					</section>
 				</section>
 
-				<section>
+				<section>			
+
 					<section>
-						<h2>Conclusion</h2>
+						<h3>de Provider driven</h3>
+						<h3>à Consumer driven</h3>
 						<ul>
-							<li>Tester des interactions</li>
-							<li>Partager les contrats</li>
-							<li>Visualiser les échanges</li>
+							<li>Pact, polyglote</li>
+							<li>Plus précis</li>
+							<li><b>/!\</b> Plus lourd</li>
 						</ul>
 						<aside class="notes">
 							Maxime
 						</aside>
 					</section>
-					<aside class="notes">
-						<ul>
-							<li>Quel consumer va casser -> aucun</li>
-							<li>Quel services sont impacté -> Pact broker network</li>
-							<li>Qui consome quelle donnée -> Contract</li>
-						</ul>
-						<aside class="notes">
-							Maxime
-						</aside>
-					</aside>
 
 					<section>
 						<h3>Les bémols</h3>
@@ -692,14 +668,18 @@ class CatalogContractTest {
 					</section>
 
 					<section>
-						<h3>de Provider driven</h3>
-						<h3>à Consumer driven</h3>
+						<h2>Conclusion</h2>
 						<ul>
-							<li>Pact, polyglote</li>
-							<li>Plus précis</li>
-							<li><b>/!\</b> Plus lourd</li>
+							<li>Tester des interactions</li>
+							<li>Partager les contrats</li>
+							<li>Visualiser les échanges</li>
 						</ul>
 						<aside class="notes">
+							<ul>
+								<li>Quel consumer va casser -> aucun</li>
+								<li>Quel services sont impactés -> Pact broker network</li>
+								<li>Qui consome quelle donnée -> Contract</li>
+							</ul>
 							Maxime
 						</aside>
 					</section>
